@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ORDER_STATUS, CHANGED_BY } from '../config/constants.js';
 
 const orderHistorySchema = new mongoose.Schema(
   {
@@ -9,18 +10,18 @@ const orderHistorySchema = new mongoose.Schema(
     },
     fromStatus: {
       type: String,
-      enum: ['PLACED', 'PROCESSING', 'READY_TO_SHIP'],
-      required: true,
+      enum: [null, ...Object.values(ORDER_STATUS)],
+      default: null,
     },
     toStatus: {
       type: String,
-      enum: ['PLACED', 'PROCESSING', 'READY_TO_SHIP'],
+      enum: Object.values(ORDER_STATUS),
       required: true,
     },
     changedBy: {
       type: String,
-      enum: ['Scheduler', 'Admin'],
-      default: 'Scheduler',
+      enum: Object.values(CHANGED_BY),
+      default: CHANGED_BY.SYSTEM,
       required: true,
     },
     changedAt: {

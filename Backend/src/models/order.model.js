@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { ORDER_STATUS, PAYMENT_STATUS } from '../config/constants.js';
 
 const orderSchema = new mongoose.Schema(
   {
@@ -29,29 +30,28 @@ const orderSchema = new mongoose.Schema(
     },
     paymentStatus: {
       type: String,
-      enum: ['pending', 'paid', 'failed'],
-      default: 'pending',
+      enum: Object.values(PAYMENT_STATUS),
+      default: PAYMENT_STATUS.PENDING,
     },
     status: {
       type: String,
-      enum: ['PLACED', 'PROCESSING', 'READY_TO_SHIP'],
-      default: 'PLACED',
-      index: true, 
+      enum: Object.values(ORDER_STATUS),
+      default: ORDER_STATUS.PLACED,
+      index: true,
     },
     lastStatusUpdatedAt: {
       type: Date,
       default: Date.now,
       required: true,
-      index: true, 
+      index: true,
     },
   },
   {
-    timestamps: true, 
+    timestamps: true,
   }
 );
 
 orderSchema.index({ createdAt: 1 });
-
 
 const Order = mongoose.model('Order', orderSchema);
 
