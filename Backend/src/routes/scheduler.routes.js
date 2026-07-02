@@ -1,9 +1,9 @@
-import {Router} from "express"
+import { Router } from "express";
+import { runSchedulerJob } from "../controllers/scheduler.controller.js";
+import { verifySecretKey } from "../middleware/verifySecretKey.js";
 
-const schedulerRouter= Router();
+const schedulerRouter = Router();
 
-schedulerRouter.post("/start",(req,res)=>{
-    
-})
+schedulerRouter.post("/run", verifySecretKey, runSchedulerJob);
 
-export default schedulerRouter
+export default schedulerRouter;

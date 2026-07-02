@@ -1,5 +1,6 @@
 import app from "./src/app.js";
 import connectDB from "./src/config/db.js";
+import "./src/jobs/cron.js";
 
 
 connectDB();

@@ -15,14 +15,29 @@ const schedulerLogSchema = new mongoose.Schema(
       default: 0,
       required: true,
     },
+    placedToProcessing: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
+    processingToReadyToShip: {
+      type: Number,
+      default: 0,
+      required: true,
+    },
+    executionTime: {
+      type: Number, // in milliseconds
+      default: 0,
+      required: true,
+    },
     status: {
       type: String,
-      enum: ['SUCCESS', 'FAILED'],
+      enum: ['RUNNING', 'SUCCESS', 'FAILED'],
       required: true,
     },
     message: {
       type: String,
-      required: true,
+      required: false,
       trim: true,
     },
   }
