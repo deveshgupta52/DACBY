@@ -1,0 +1,77 @@
+{
+  "info": {
+    "_postman_id": "48db4b5d-e12d-4772-a76b-035f37fb5b57",
+    "name": "DACBY",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "create-order",
+      "id": "9437fe0c-d263-402e-a036-b8789e984569",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"customerName\": \"Devesh Gupta\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"productName\": \"Gaming Mouse\",\r\n  \"amount\": 1500\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/order/create",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "order",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get orders",
+      "id": "159ae6fd-6b4a-4c14-9491-c1cdf64aae69",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/order/?status=PLACED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "order",
+            ""
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "PLACED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "id": "cdd56949-bd5a-4dbf-a883-1e5b99924753",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
