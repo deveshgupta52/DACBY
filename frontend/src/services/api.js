@@ -14,4 +14,13 @@ export const getOrders = async (status) => {
     return response.data;
 };
 
+export const runScheduler = async () => {
+    const response = await api.post("/scheduler/run", {}, {
+        headers: {
+            "x-scheduler-key": "abc"
+        }
+    });
+    return response.data;
+};
+
 export default api;

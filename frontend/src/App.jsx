@@ -14,22 +14,21 @@ function App() {
         <div>
           {/* Logo Brand */}
           <div className="h-20 flex items-center px-6 border-b border-neutral-800 space-x-3">
-           
+
             <span className="text-lg text-shadow-white ">
               DACBY
             </span>
-           
+
           </div>
 
           {/* Navigation Links */}
           <nav className="p-4 space-y-1.5">
             <button
               onClick={() => setActiveTab('dashboard')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                activeTab === 'dashboard'
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${activeTab === 'dashboard'
                   ? 'bg-black/50 text-indigo-400 border border-indigo-500/20 shadow-inner'
                   : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 border border-transparent'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2H6a2 2 0 01-2-2v-4zM14 16a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2v-4z" />
@@ -39,11 +38,10 @@ function App() {
 
             <button
               onClick={() => setActiveTab('create')}
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${
-                activeTab === 'create'
+              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 ${activeTab === 'create'
                   ? 'bg-black/50 text-indigo-400 border border-indigo-500/20 shadow-inner'
                   : 'text-slate-400 hover:bg-slate-800/50 hover:text-slate-200 border border-transparent'
-              }`}
+                }`}
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -53,7 +51,7 @@ function App() {
           </nav>
         </div>
 
-       
+
       </aside>
 
       {/* Main Workspace */}
